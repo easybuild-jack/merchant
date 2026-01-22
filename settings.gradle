@@ -1,0 +1,29 @@
+rootProject.name = 'merchant'
+
+dependencyResolutionManagement.versionCatalogs{
+    libs {
+        library("dependencies", "com.mcst:easyfk-dependencies:3.2.12")
+        library('lombok', 'org.projectlombok:lombok:1.18.38')
+        library('processor', 'org.springframework.boot:spring-boot-configuration-processor:3.2.12')
+    }
+}
+
+
+include 'merchant-server'
+include 'merchant-api'
+
+include 'merchant-remote'
+include 'merchant-remote:merchant-cloud-api'
+findProject(':merchant-remote:merchant-cloud-api')?.name = 'merchant-cloud-api'
+include 'merchant-remote:merchant-cloud-provider'
+findProject(':merchant-remote:merchant-cloud-provider')?.name = 'merchant-cloud-provider'
+include 'merchant-remote:merchant-dubbo-api'
+findProject(':merchant-remote:merchant-dubbo-api')?.name = 'merchant-dubbo-api'
+include 'merchant-remote:merchant-dubbo-provider'
+findProject(':merchant-remote:merchant-dubbo-provider')?.name = 'merchant-dubbo-provider'
+
+include 'merchant-prd'
+include 'merchant-prd:merchant-prd-client'
+findProject(':merchant-prd:merchant-prd-client')?.name = 'merchant-prd-client'
+include 'merchant-prd:merchant-prd-bms'
+findProject(':merchant-prd:merchant-prd-bms')?.name = 'merchant-prd-bms'

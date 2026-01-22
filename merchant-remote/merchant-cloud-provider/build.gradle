@@ -1,0 +1,6 @@
+dependencies {
+    api ('com.mcst:web-micro')
+    api project(':merchant-remote:merchant-cloud-api')
+    api project(':merchant-server')
+    compileOnly ('com.mcst:remote-cloud')
+}
