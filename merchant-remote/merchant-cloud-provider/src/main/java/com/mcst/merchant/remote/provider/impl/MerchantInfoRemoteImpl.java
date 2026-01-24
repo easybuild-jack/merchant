@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 * @author liu yijun
 */
 @RestController
-@RequestMapping("${easyfk.config.remote.merchant.base-path:/remote}/merchant/merchantInfo")
+@RequestMapping("${easyfk.config.remote.merchant.base-path:/remote}/businesses/merchant")
 public class MerchantInfoRemoteImpl extends BaseRemoteImpl<IMerchantInfoService, MerchantInfoResp,String,MerchantInfoReq> implements IMerchantInfoRemote {
 
 

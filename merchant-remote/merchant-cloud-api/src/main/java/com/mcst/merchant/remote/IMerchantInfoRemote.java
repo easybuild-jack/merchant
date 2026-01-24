@@ -13,7 +13,7 @@ import org.springframework.cloud.openfeign.FeignClient;
 * @author liu yijun
 * @since 2026-01-19
 */
-@FeignClient(value = "${easyfk.config.remote.merchant.service-id:merchant-server}", path = "${easyfk.config.remote.merchant.base-path:/remote}/merchant/merchantInfo")
+@FeignClient(value = "${easyfk.config.remote.merchant.service-id:server}", path = "${easyfk.config.remote.merchant.base-path:/remote}/businesses/merchant")
 public interface IMerchantInfoRemote extends IBaseRemote<MerchantInfoResp,String,MerchantInfoReq>{
 
 
