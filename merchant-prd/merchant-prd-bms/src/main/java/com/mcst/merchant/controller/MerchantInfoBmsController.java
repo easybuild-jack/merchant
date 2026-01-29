@@ -36,7 +36,7 @@ import java.util.List;
 @Tag(name = "商户信息相关接口", description = "商户信息相关接口")
 @RestController
 @RequestMapping("/api/bms/businesses/merchant")
-@ResourceController(group = "businessesManage", id = "businessesManage", name = "商超管理", sort = 71000, path = "businesses")
+@ResourceController(group = "businessesSetting", id = "businessesManage", name = "商超管理", sort = 71000, path = "/businesses")
 public class MerchantInfoBmsController {
     @Resource
     private IMerchantInfoApi merchantInfoApi;
@@ -49,7 +49,7 @@ public class MerchantInfoBmsController {
 
     @Operation(summary = "分页查询", description = "分页查询")
     @GetMapping("/queryPage")
-    @AuthResource(id = "merchantManage", name = "商户管理", pId = "businessesManage", pName = "商超管理", sort = 71200, path = "businesses/merchant",
+    @AuthResource(id = "merchantManage", name = "商户管理", pId = "businessesManage", pName = "商超管理", sort = 71200, path = "/businesses/merchant",
             category = ResourceCategory.menu)
     public ResponseResult<List<MerchantInfoResp>> queryPage(@Validated MerchantInfoReq merchantInfoReq) {
         SRPBuilder<MerchantInfoReq> builder = SRPBuilder.<MerchantInfoReq>builder().example(merchantInfoReq);
