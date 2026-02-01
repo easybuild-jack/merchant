@@ -52,7 +52,7 @@ public class MerchantInfoController {
     @GetMapping("/selectList")
     public ResponseResult<List<MerchantInfoResp>> selectList(MerchantInfoReq merchantInfoReq) {
         SRPBuilder<MerchantInfoReq> requestParamBuilder =
-                SRPBuilder.<MerchantInfoReq>builder().selectFields(MerchantInfoReq::getMerchantInfoId, MerchantInfoReq::getMerchantName).example(merchantInfoReq);
+                SRPBuilder.<MerchantInfoReq>builder().selectFields(MerchantInfoReq::getMerchantId, MerchantInfoReq::getMerchantName).example(merchantInfoReq);
         if (EmptyUtil.isNotEmpty(merchantInfoReq.getMerchantName())) {
             requestParamBuilder.likeFields(MerchantInfoReq::getMerchantName);
             merchantInfoReq.setTop(20);

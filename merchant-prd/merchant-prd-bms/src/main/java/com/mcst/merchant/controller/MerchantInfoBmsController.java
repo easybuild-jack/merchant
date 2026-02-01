@@ -49,8 +49,7 @@ public class MerchantInfoBmsController {
 
     @Operation(summary = "分页查询", description = "分页查询")
     @GetMapping("/queryPage")
-    @AuthResource(id = "merchantManage", name = "商户管理", pId = "businessesManage", pName = "商超管理", sort = 71200, path = "/businesses/merchant",
-            category = ResourceCategory.menu)
+    @AuthResource(id = "merchantManage", name = "商户管理", pId = "businessesManage", pName = "商超管理", sort = 71200, path = "/businesses/merchant", category = ResourceCategory.menu)
     public ResponseResult<List<MerchantInfoResp>> queryPage(@Validated MerchantInfoReq merchantInfoReq) {
         SRPBuilder<MerchantInfoReq> builder = SRPBuilder.<MerchantInfoReq>builder().example(merchantInfoReq);
         return RRBuilder.buildBodyByPageResult(this.merchantInfoApi.queryByPage(builder.build()));
@@ -58,8 +57,7 @@ public class MerchantInfoBmsController {
 
     @Operation(summary = "新增/编辑", description = "新增/编辑")
     @PostMapping("/addOrEdit")
-    @AuthResource(id = "merchantAddOrEdit", name = "新增/编辑", title = "新增/编辑", pId = "merchantManage", pName = "商户管理", sort = 71201, category = ResourceCategory.action,
-            actionCode = "addOrEdit")
+    @AuthResource(id = "merchantAddOrEdit", name = "新增/编辑", title = "新增/编辑", pId = "merchantManage", pName = "商户管理", sort = 71201, category = ResourceCategory.action, actionCode = "addOrEdit")
     public ResponseResult<?> addOrEdit(@RequestBody MerchantInfoEditReq merchantInfoEditReq) {
         ModifyRequest<MerchantInfoReq> requestParam = MRPBuilder.buildRequest(merchantInfoEditReq, MerchantInfoReq.class);
         return RRBuilder.buildBodyByBaseResult(this.merchantInfoApi.save(requestParam));
@@ -67,8 +65,7 @@ public class MerchantInfoBmsController {
 
     @Operation(summary = "批量删除", description = "批量删除")
     @PostMapping("/delete")
-    @AuthResource(id = "merchantDelete", name = "删除", title = "删除", pId = "merchantManage", pName = "商户管理", sort = 71202, category = ResourceCategory.action,
-            actionCode = "delete")
+    @AuthResource(id = "merchantDelete", name = "删除", title = "删除", pId = "merchantManage", pName = "商户管理", sort = 71202, category = ResourceCategory.action, actionCode = "delete")
     public ResponseResult<?> delete(@Validated @RequestBody BatchBasicReq<String> batchBase) {
         List<String> idArray = SplitUtil.split(batchBase.getIds());
         ModifyRequest<MerchantInfoReq> requestParam = MRPBuilder.<MerchantInfoReq>builder().ids(idArray).build();
@@ -78,11 +75,9 @@ public class MerchantInfoBmsController {
 
     @Operation(summary = "启用/禁用")
     @PostMapping("/disable")
-    @AuthResource(id = "merchantDisable", name = "启用/禁用", title = "启用/禁用", pId = "merchantManage", pName = "商户管理", sort = 71203, category = ResourceCategory.action,
-            actionCode = "disable")
+    @AuthResource(id = "merchantDisable", name = "启用/禁用", title = "启用/禁用", pId = "merchantManage", pName = "商户管理", sort = 71203, category = ResourceCategory.action, actionCode = "disable")
     public ResponseResult<?> disable(@RequestBody @Validated DisableFieldReq disableFieldVO) {
-        DisableActionParam<MerchantInfoReq> disableActionParam =
-                new DisableActionParam<MerchantInfoReq>(disableFieldVO).setIdField(MerchantInfoReq::getMerchantInfoId).setValueField(MerchantInfoReq::getForbiddenFlag).setTClass(MerchantInfoReq.class);
+        DisableActionParam<MerchantInfoReq> disableActionParam = new DisableActionParam<MerchantInfoReq>(disableFieldVO).setIdField(MerchantInfoReq::getMerchantId).setValueField(MerchantInfoReq::getForbiddenFlag).setTClass(MerchantInfoReq.class);
         List<MerchantInfoReq> list = DisableUtil.createObjListByDisableAction(disableActionParam);
         if (EmptyUtil.isEmpty(list)) {
             return RRBuilder.buildFailedBody("参数错误");
@@ -94,8 +89,7 @@ public class MerchantInfoBmsController {
     @Operation(summary = "下拉列表接口")
     @GetMapping("/selectList")
     public ResponseResult<List<MerchantInfoResp>> selectList(MerchantInfoReq merchantInfoReq) {
-        SRPBuilder<MerchantInfoReq> requestParamBuilder =
-                SRPBuilder.<MerchantInfoReq>builder().selectFields(MerchantInfoReq::getMerchantInfoId, MerchantInfoReq::getMerchantName).example(merchantInfoReq);
+        SRPBuilder<MerchantInfoReq> requestParamBuilder = SRPBuilder.<MerchantInfoReq>builder().selectFields(MerchantInfoReq::getMerchantId, MerchantInfoReq::getMerchantName).example(merchantInfoReq);
         if (EmptyUtil.isNotEmpty(merchantInfoReq.getMerchantName())) {
             requestParamBuilder.likeFields(MerchantInfoReq::getMerchantName);
             merchantInfoReq.setTop(20);

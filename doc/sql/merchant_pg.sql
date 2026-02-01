@@ -7,7 +7,7 @@
 -- 1. 商户信息表
 DROP TABLE IF EXISTS merchant_info CASCADE;
 CREATE TABLE merchant_info (
-    merchant_info_id VARCHAR(50) NOT NULL,
+    merchant_id VARCHAR(50) NOT NULL,
     merchant_name VARCHAR(200) DEFAULT NULL,
     merchant_code VARCHAR(50) DEFAULT NULL,
     logo VARCHAR(500) DEFAULT NULL,
@@ -27,7 +27,7 @@ CREATE TABLE merchant_info (
     insert_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     last_update_time TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
     deleted SMALLINT NOT NULL DEFAULT 0,
-    CONSTRAINT pk_merchant_info PRIMARY KEY (merchant_info_id),
+    CONSTRAINT pk_merchant_info PRIMARY KEY (merchant_id),
     CONSTRAINT uk_merchant_info_merchant_code UNIQUE (merchant_code)
 );
 
@@ -52,10 +52,10 @@ CREATE TRIGGER trigger_update_merchant_info_timestamp
 
 -- 表注释
 COMMENT ON TABLE merchant_info IS '商户信息';
-COMMENT ON COLUMN merchant_info.merchant_info_id IS '商户信息ID';
-COMMENT ON COLUMN merchant_info.merchant_name IS '门店名称';
-COMMENT ON COLUMN merchant_info.merchant_code IS '门店代码';
-COMMENT ON COLUMN merchant_info.logo IS '门店 logo';
+COMMENT ON COLUMN merchant_info.merchant_id IS '商户ID';
+COMMENT ON COLUMN merchant_info.merchant_name IS '商户名称';
+COMMENT ON COLUMN merchant_info.merchant_code IS '商户代码';
+COMMENT ON COLUMN merchant_info.logo IS '商户 logo';
 COMMENT ON COLUMN merchant_info.province IS '省份';
 COMMENT ON COLUMN merchant_info.city IS '城市';
 COMMENT ON COLUMN merchant_info.area IS '区域';

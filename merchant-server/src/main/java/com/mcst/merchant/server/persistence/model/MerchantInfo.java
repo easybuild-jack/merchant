@@ -27,25 +27,25 @@ public class MerchantInfo extends BaseMyBatisPlusEntity<MerchantInfo> {
 
     @PrimaryKey
     @TableId(type = IdType.ASSIGN_UUID)
-    @Column(comment = "商户信息ID")
-    private String merchantInfoId;
+    @Column(comment = "商户ID")
+    private String merchantId;
 
     /**
-     * 门店名称
+     * 商户名称
      */
-    @Column(comment = "门店名称")
+    @Column(comment = "商户名称")
     private String merchantName;
 
     /**
-     * 门店代码
+     * 商户代码
      */
-    @Column(comment = "门店代码")
+    @Column(comment = "商户代码")
     private String merchantCode;
 
     /**
-     * 门店logo
+     * 商户logo
      */
-    @Column(comment = "门店logo")
+    @Column(comment = "商户logo")
     private String logo;
 
     /**
