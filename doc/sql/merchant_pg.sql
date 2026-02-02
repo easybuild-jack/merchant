@@ -11,6 +11,8 @@ CREATE TABLE merchant_info (
     merchant_name VARCHAR(200) DEFAULT NULL,
     merchant_code VARCHAR(50) DEFAULT NULL,
     logo VARCHAR(500) DEFAULT NULL,
+    title VARCHAR(200) DEFAULT NULL,
+    sub_title VARCHAR(200) DEFAULT NULL,
     province VARCHAR(50) DEFAULT NULL,
     city VARCHAR(50) DEFAULT NULL,
     area VARCHAR(50) DEFAULT NULL,
@@ -56,6 +58,8 @@ COMMENT ON COLUMN merchant_info.merchant_id IS '商户ID';
 COMMENT ON COLUMN merchant_info.merchant_name IS '商户名称';
 COMMENT ON COLUMN merchant_info.merchant_code IS '商户代码';
 COMMENT ON COLUMN merchant_info.logo IS '商户 logo';
+COMMENT ON COLUMN merchant_info.title IS '标题';
+COMMENT ON COLUMN merchant_info.sub_title IS '副标题';
 COMMENT ON COLUMN merchant_info.province IS '省份';
 COMMENT ON COLUMN merchant_info.city IS '城市';
 COMMENT ON COLUMN merchant_info.area IS '区域';

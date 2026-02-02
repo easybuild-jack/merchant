@@ -50,6 +50,18 @@ public class MerchantInfoParam extends BasicParam {
     private String logo;
 
     /**
+     * 标题
+     */
+    @Schema(description = "标题")
+    private String title;
+
+    /**
+     * 副标题
+     */
+    @Schema(description = "副标题")
+    private String subTitle;
+
+    /**
      * 省份
      */
     @Schema(description = "省份")

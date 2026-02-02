@@ -14,6 +14,8 @@ CREATE TABLE `merchant_info` (
     `merchant_name` VARCHAR(200) DEFAULT NULL COMMENT '商户名称',
     `merchant_code` VARCHAR(50) DEFAULT NULL COMMENT '商户代码',
     `logo` VARCHAR(500) DEFAULT NULL COMMENT '商户 logo',
+    `title` VARCHAR(200) DEFAULT NULL COMMENT '标题',
+    `sub_title` VARCHAR(200) DEFAULT NULL COMMENT '副标题',
     `province` VARCHAR(50) DEFAULT NULL COMMENT '省份',
     `city` VARCHAR(50) DEFAULT NULL COMMENT '城市',
     `area` VARCHAR(50) DEFAULT NULL COMMENT '区域',

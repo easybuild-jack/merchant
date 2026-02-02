@@ -48,6 +48,19 @@ public class MerchantInfo extends BaseMyBatisPlusEntity<MerchantInfo> {
     @Column(comment = "商户logo")
     private String logo;
 
+
+    /**
+     * 标题
+     */
+    @Column(comment = "标题")
+    private String title;
+
+    /**
+     * 副标题
+     */
+    @Column(comment = "副标题")
+    private String subTitle;
+
     /**
      * 省份
      */
