@@ -1,5 +1,5 @@
 dependencies {
-    api ('com.mcst:web-micro')
+    api('com.mcst:web-micro')
     api project(':merchant-remote:merchant-dubbo-api')
     api project(':merchant-server')
     compileOnly('com.mcst:rpc-dubbo')

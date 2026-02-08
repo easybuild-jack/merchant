@@ -1,29 +1,31 @@
 package com.mcst.merchant.server.service.impl;
 
-import com.mcst.merchant.api.response.MerchantInfoResp;
-import com.mcst.merchant.api.request.MerchantInfoReq;
-import com.mcst.merchant.api.dto.MerchantInfoDto;
-import com.mcst.merchant.server.service.IMerchantInfoService;
-import com.mcst.merchant.server.repository.IMerchantInfoRepository;
 import com.mcst.easyfk.core.dto.page.PageResult;
-import com.mcst.easyfk.core.dto.request.SearchRequest;
 import com.mcst.easyfk.core.dto.request.ModifyRequest;
+import com.mcst.easyfk.core.dto.request.SearchRequest;
 import com.mcst.easyfk.core.dto.response.BaseResult;
-import com.mcst.easyfk.repository.util.ConditionUtil;
-import java.util.List;
-import jakarta.annotation.Resource;
-import com.mcst.easyfk.service.util.ServiceUtil;
 import com.mcst.easyfk.core.utils.common.TransformUtil;
-/**
-* <p>
-* 商户信息 服务实现类
-* </p>
-*
-* @author liu yijun
-* @since 2026-01-19
-*/
+import com.mcst.easyfk.repository.util.ConditionUtil;
+import com.mcst.easyfk.service.util.ServiceUtil;
+import com.mcst.merchant.api.dto.MerchantInfoDto;
+import com.mcst.merchant.api.request.MerchantInfoReq;
+import com.mcst.merchant.api.response.MerchantInfoResp;
+import com.mcst.merchant.server.repository.IMerchantInfoRepository;
+import com.mcst.merchant.server.service.IMerchantInfoService;
+import jakarta.annotation.Resource;
 
-public class MerchantInfoServiceImpl  implements IMerchantInfoService {
+import java.util.List;
+
+/**
+ * <p>
+ * 商户信息 服务实现类
+ * </p>
+ *
+ * @author liu yijun
+ * @since 2026-01-19
+ */
+
+public class MerchantInfoServiceImpl implements IMerchantInfoService {
     @Resource
     private IMerchantInfoRepository merchantInfoRepository;
 
@@ -59,7 +61,7 @@ public class MerchantInfoServiceImpl  implements IMerchantInfoService {
 
     @Override
     public PageResult<MerchantInfoResp> queryByPage(SearchRequest<MerchantInfoReq> param) {
-        return TransformUtil.transformPageResult(this.merchantInfoRepository.queryByPage(ConditionUtil.conditionByRequest(param)),MerchantInfoResp.class);
+        return TransformUtil.transformPageResult(this.merchantInfoRepository.queryByPage(ConditionUtil.conditionByRequest(param)), MerchantInfoResp.class);
     }
 
     @Override

@@ -1,21 +1,21 @@
 package com.mcst.merchant.server.config;
 
-import com.mcst.merchant.api.*;
-import com.mcst.merchant.server.service.*;
-import com.mcst.merchant.server.repository.*;
-import com.mcst.merchant.server.impl.*;
-import com.mcst.merchant.server.service.impl.*;
-import com.mcst.merchant.server.repository.impl.*;
-
-import org.springframework.boot.context.properties.EnableConfigurationProperties;
-import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Bean;
+import com.mcst.merchant.api.IMerchantInfoApi;
+import com.mcst.merchant.server.impl.MerchantInfoApiServerImpl;
+import com.mcst.merchant.server.repository.IMerchantInfoRepository;
+import com.mcst.merchant.server.repository.impl.MerchantInfoRepositoryImpl;
+import com.mcst.merchant.server.service.IMerchantInfoService;
+import com.mcst.merchant.server.service.impl.MerchantInfoServiceImpl;
+import org.springframework.boot.autoconfigure.AutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+
 /**
-*
-* @author liu yijun
-*/
-@Configuration
+ *
+ * @author liu yijun
+ */
+@AutoConfiguration
 @EnableConfigurationProperties
 public class MerchantServerConfig {
 
