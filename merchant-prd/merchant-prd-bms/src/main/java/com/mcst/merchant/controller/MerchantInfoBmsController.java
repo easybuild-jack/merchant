@@ -34,7 +34,7 @@ import java.util.List;
  * @since 2026-01-19
  */
 @Tag(name = "商户信息相关接口", description = "商户信息相关接口")
-@RestController
+@ResponseBody
 @RequestMapping("/api/bms/businesses/merchant")
 @ResourceController(group = "businessesSetting", id = "businessesManage", name = "商超管理", sort = 71000, path = "/businesses")
 public class MerchantInfoBmsController {
