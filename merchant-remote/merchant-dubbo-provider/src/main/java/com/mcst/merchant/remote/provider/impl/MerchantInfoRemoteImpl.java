@@ -5,7 +5,6 @@ import com.mcst.merchant.api.request.MerchantInfoReq;
 import com.mcst.merchant.api.response.MerchantInfoResp;
 import com.mcst.merchant.remote.IMerchantInfoRemote;
 import com.mcst.merchant.server.service.IMerchantInfoService;
-import org.apache.dubbo.config.annotation.DubboService;
 
 /**
  * <p>
@@ -14,7 +13,6 @@ import org.apache.dubbo.config.annotation.DubboService;
  *
  * @author liu yijun
  */
-@DubboService
 public class MerchantInfoRemoteImpl extends DubboBaseRemoteImpl<IMerchantInfoService, MerchantInfoResp, String, MerchantInfoReq> implements IMerchantInfoRemote {
 
 
