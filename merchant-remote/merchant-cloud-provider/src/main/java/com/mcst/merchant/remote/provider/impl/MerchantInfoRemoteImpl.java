@@ -6,7 +6,7 @@ import com.mcst.merchant.api.response.MerchantInfoResp;
 import com.mcst.merchant.remote.IMerchantInfoRemote;
 import com.mcst.merchant.server.service.IMerchantInfoService;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * <p>
@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
  *
  * @author liu yijun
  */
-@ResponseBody
+@RestController
 @RequestMapping("${easyfk.config.remote.merchant.base-path:/remote}/businesses/merchant")
 public class MerchantInfoRemoteImpl extends BaseRemoteImpl<IMerchantInfoService, MerchantInfoResp, String, MerchantInfoReq> implements IMerchantInfoRemote {
 

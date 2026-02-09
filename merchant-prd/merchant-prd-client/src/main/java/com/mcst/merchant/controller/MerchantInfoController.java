@@ -14,7 +14,7 @@ import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -25,7 +25,7 @@ import java.util.List;
  * @since 2026-01-19
  */
 @Tag(name = "商户信息相关接口", description = "商户信息相关接口")
-@ResponseBody
+@RestController
 @RequestMapping("/api/businesses/merchant")
 public class MerchantInfoController {
     @Resource
