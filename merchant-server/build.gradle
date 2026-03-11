@@ -1,6 +1,6 @@
 dependencies {
     api project(':merchant-api')
-    compileOnly project(':merchant-orm:merchant-orm-plus')
+    api project(':merchant-orm:merchant-orm-api')
     implementation('com.mcst:service-base')
 }
 
