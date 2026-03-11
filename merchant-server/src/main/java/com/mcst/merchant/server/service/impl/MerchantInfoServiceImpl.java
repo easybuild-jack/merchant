@@ -10,7 +10,7 @@ import com.mcst.easyfk.service.util.ServiceUtil;
 import com.mcst.merchant.api.dto.MerchantInfoDto;
 import com.mcst.merchant.api.request.MerchantInfoReq;
 import com.mcst.merchant.api.response.MerchantInfoResp;
-import com.mcst.merchant.server.repository.IMerchantInfoRepository;
+import com.mcst.merchant.orm.repository.IMerchantInfoRepository;
 import com.mcst.merchant.server.service.IMerchantInfoService;
 import jakarta.annotation.Resource;
 

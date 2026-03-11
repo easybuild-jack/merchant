@@ -1,4 +1,4 @@
-package com.mcst.merchant.server.repository;
+package com.mcst.merchant.orm.repository;
 
 import com.mcst.easyfk.repository.api.IBaseRepository;
 import com.mcst.merchant.api.dto.MerchantInfoDto;

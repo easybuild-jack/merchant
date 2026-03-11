@@ -1,10 +1,10 @@
-package com.mcst.merchant.server.repository.impl;
+package com.mcst.merchant.orm.plus.repository.impl;
 
 import com.mcst.easyfk.service.mybatisplus.impl.BaseMyBatisRepositoryImpl;
 import com.mcst.merchant.api.dto.MerchantInfoDto;
-import com.mcst.merchant.server.persistence.mapper.MerchantInfoMapper;
-import com.mcst.merchant.server.persistence.model.MerchantInfo;
-import com.mcst.merchant.server.repository.IMerchantInfoRepository;
+import com.mcst.merchant.orm.plus.persistence.mapper.MerchantInfoMapper;
+import com.mcst.merchant.orm.plus.persistence.model.MerchantInfo;
+import com.mcst.merchant.orm.repository.IMerchantInfoRepository;
 
 /**
  * <p>

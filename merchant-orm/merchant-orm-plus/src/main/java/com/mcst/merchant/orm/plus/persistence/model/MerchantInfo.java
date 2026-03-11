@@ -1,4 +1,4 @@
-package com.mcst.merchant.server.persistence.model;
+package com.mcst.merchant.orm.plus.persistence.model;
 
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;

@@ -14,6 +14,7 @@ import jakarta.annotation.Resource;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -34,7 +35,7 @@ public class MerchantInfoController {
 
     @Operation(summary = "详情")
     @GetMapping("/detail")
-    public ResponseResult<MerchantInfoResp> detail(String id) {
+    public ResponseResult<MerchantInfoResp> detail(@RequestParam("id") String id) {
         return RRBuilder.buildSuccessBody(this.merchantInfoApi.queryById(id));
     }
 

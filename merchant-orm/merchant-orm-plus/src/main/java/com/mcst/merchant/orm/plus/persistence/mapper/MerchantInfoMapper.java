@@ -1,7 +1,7 @@
-package com.mcst.merchant.server.persistence.mapper;
+package com.mcst.merchant.orm.plus.persistence.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.mcst.merchant.server.persistence.model.MerchantInfo;
+import com.mcst.merchant.orm.plus.persistence.model.MerchantInfo;
 
 /**
  * <p>
@@ -14,4 +14,3 @@ import com.mcst.merchant.server.persistence.model.MerchantInfo;
 public interface MerchantInfoMapper extends BaseMapper<MerchantInfo> {
 
 }
-

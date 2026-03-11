@@ -2,8 +2,6 @@ package com.mcst.merchant.server.config;
 
 import com.mcst.merchant.api.IMerchantInfoApi;
 import com.mcst.merchant.server.impl.MerchantInfoApiServerImpl;
-import com.mcst.merchant.server.repository.IMerchantInfoRepository;
-import com.mcst.merchant.server.repository.impl.MerchantInfoRepositoryImpl;
 import com.mcst.merchant.server.service.IMerchantInfoService;
 import com.mcst.merchant.server.service.impl.MerchantInfoServiceImpl;
 import org.springframework.boot.autoconfigure.AutoConfiguration;
@@ -31,12 +29,5 @@ public class MerchantServerConfig {
     public IMerchantInfoService merchantInfoService() {
         return new MerchantInfoServiceImpl();
     }
-
-    @Bean
-    @ConditionalOnMissingBean
-    public IMerchantInfoRepository merchantInfoRepository() {
-        return new MerchantInfoRepositoryImpl();
-    }
-
 
 }
