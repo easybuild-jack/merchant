@@ -1,4 +1,4 @@
 dependencies {
     api project(':merchant-orm:merchant-orm-api')
-    implementation('com.mcst:orm-hibernate')
+    api('com.mcst:orm-hibernate')
 }
